@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_agenda/app/view/my_home_page.dart';
+import 'package:projeto_agenda/app/view/contact_form.dart';
+import 'package:projeto_agenda/app/view/contact_list.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  static const HOME = '/';
+  static const FORM = 'form';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        HOME: (context) => ContactList(),
+        FORM: (context) => ContactForm(),
+      },
     );
   }
 }
